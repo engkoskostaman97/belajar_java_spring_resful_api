@@ -2,6 +2,7 @@ package engkoskostaman.belajarspringrestfullapi.service;
 
 import engkoskostaman.belajarspringrestfullapi.entity.User;
 import engkoskostaman.belajarspringrestfullapi.model.RegisterUserRequest;
+import engkoskostaman.belajarspringrestfullapi.model.UserResponse;
 import engkoskostaman.belajarspringrestfullapi.repository.UserRepository;
 import engkoskostaman.belajarspringrestfullapi.security.BCrypt;
 import jakarta.transaction.Transactional;
@@ -39,6 +40,15 @@ public class UserService {
 
         userRepository.save(user);
     }
+
+
+    public  UserResponse get(User user){
+        return UserResponse.builder()
+                .username(user.getUsername())
+                .name(user.getName())
+                .build();
+    }
+
 
 
 }
