@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class WebResponse <T>{
-    private T  data;
-    private String errors;
+public class TokenResponse {
+    private  String token;
+
+    private  Long expiredAt;
 }
